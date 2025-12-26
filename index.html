@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>توصيل طعام - أفضل المطاعم المحلية</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="page-wrapper">
+
+    <!-- =========================================
+         Header Section
+         ========================================= -->
+    <header id="main-header">
+        <div class="container nav-container">
+            <a href="#" class="logo" onclick="showHome()">توصيل طعام</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#" onclick="showHome()">الرئيسية</a></li>
+                    <li><a href="#" onclick="showAllRestaurants()">المطاعم</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- CONTAINER FOR HOME VIEW (HERO + LISTINGS) -->
+        <div id="home-view">
+
+            <!-- =========================================
+         Hero Section
+         ========================================= -->
+            <section id="hero">
+                <div class="container hero-content">
+                    <h1>طعام لذيذ، يصلك أينما كنت</h1>
+                    <p>اطلب من أفضل المطاعم المحلية بضغطة زر.</p>
+                </div>
+            </section>
+
+            <!-- =========================================
+         Restaurant Listings Section (HOME PREVIEW)
+         ========================================= -->
+            <section id="restaurants">
+                <div class="container">
+                    <h2 class="section-title">المطاعم الأكثر طلباً</h2>
+
+                    <div class="restaurant-grid">
+                        <!-- Restaurant Card 1 -->
+                        <article class="restaurant-card">
+                            <div class="card-image">
+                                <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=600&q=80"
+                                    alt="صورة المطعم">
+                                <span class="rating-badge">★ 4.8</span>
+                            </div>
+                            <div class="card-info">
+                                <h3 class="restaurant-name">برجر جوينت</h3>
+                                <div class="restaurant-meta">
+                                    <span>وجبات سريعة • $$</span>
+                                    <!-- Review Summary -->
+                                    <span class="review-summary">(120 تقييم)</span>
+                                </div>
+                                <button onclick="showRestaurant('restaurant-1')" class="view-menu-btn">عرض
+                                    القائمة</button>
+                            </div>
+                        </article>
+
+                        <!-- Restaurant Card 2 -->
+                        <article class="restaurant-card">
+                            <div class="card-image">
+                                <img src="https://images.unsplash.com/photo-1590846406792-0adc7f938f1d?auto=format&fit=crop&w=600&q=80"
+                                    alt="صورة المطعم">
+                                <span class="rating-badge">★ 4.5</span>
+                            </div>
+                            <div class="card-info">
+                                <h3 class="restaurant-name">قصر السوشي</h3>
+                                <div class="restaurant-meta">
+                                    <span>ياباني • $$$</span>
+                                    <span class="review-summary">(85 تقييم)</span>
+                                </div>
+                                <button onclick="showRestaurant('restaurant-2')" class="view-menu-btn">عرض
+                                    القائمة</button>
+                            </div>
+                        </article>
+
+                        <!-- Restaurant Card 3 -->
+                        <article class="restaurant-card">
+                            <div class="card-image">
+                                <img src="https://i0.wp.com/www.touristitaly.com/wp-content/uploads/2023/11/shutterstock_1054754711.jpg?auto=format&fit=crop&w=600&q=80"
+                                    alt="صورة المطعم">
+                                <span class="rating-badge">★ 4.9</span>
+                            </div>
+                            <div class="card-info">
+                                <h3 class="restaurant-name">بيلا إيطاليا</h3>
+                                <div class="restaurant-meta">
+                                    <span>إيطالي • $$</span>
+                                    <span class="review-summary">(200 تقييم)</span>
+                                </div>
+                                <button onclick="showRestaurant('restaurant-3')" class="view-menu-btn">عرض
+                                    القائمة</button>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- View All Button -->
+                    <div class="text-center" style="margin-top: 40px;">
+                        <button onclick="showAllRestaurants()" class="btn-primary">عرض جميع المطاعم</button>
+                    </div>
+                </div>
+            </section>
+
+        </div> <!-- END HOME VIEW -->
+
+        <!-- =========================================
+         ALL RESTAURANTS VIEW
+         ========================================= -->
+        <div id="all-restaurants-view" class="hidden">
+            <section class="section-header">
+                <div class="container">
+                    <button onclick="showHome()" class="back-btn">← العودة للرئيسية</button>
+                    <h2 class="section-title">جميع المطاعم</h2>
+                </div>
+            </section>
+
+            <section id="all-restaurants-grid" class="container">
+                <div class="restaurant-grid">
+                    <!-- REPEAT ALL CARDS HERE (9 Total) -->
+
+                    <!-- 1. Burger -->
+                    <article class="restaurant-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=600&q=80"
+                                alt="صورة المطعم">
+                            <span class="rating-badge">★ 4.8</span>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="restaurant-name">برجر جوينت</h3>
+                            <div class="restaurant-meta">
+                                <span>وجبات سريعة</span> <span class="review-summary">(120 تقييم)</span>
+                            </div>
+                            <button onclick="showRestaurant('restaurant-1')" class="view-menu-btn">عرض
+                                القائمة</button>
+                        </div>
+                    </article>
+
+                    <!-- 2. Sushi -->
+                    <article class="restaurant-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1590846406792-0adc7f938f1d?auto=format&fit=crop&w=600&q=80"
+                                alt="صورة المطعم">
+                            <span class="rating-badge">★ 4.5</span>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="restaurant-name">قصر السوشي</h3>
+                            <div class="restaurant-meta">
+                                <span>ياباني</span> <span class="review-summary">(85 تقييم)</span>
+                            </div>
+                            <button onclick="showRestaurant('restaurant-2')" class="view-menu-btn">عرض
+                                القائمة</button>
+                        </div>
+                    </article>
+
+                    <!-- 3. Italian -->
+                    <article class="restaurant-card">
+                        <div class="card-image">
+                            <img src="https://i0.wp.com/www.touristitaly.com/wp-content/uploads/2023/11/shutterstock_1054754711.jpg?auto=format&fit=crop&w=600&q=80"
+                                alt="صورة المطعم">
+                            <span class="rating-badge">★ 4.9</span>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="restaurant-name">بيلا إيطاليا</h3>
+                            <div class="restaurant-meta">
+                                <span>إيطالي</span> <span class="review-summary">(200 تقييم)</span>
+                            </div>
+                            <button onclick="showRestaurant('restaurant-3')" class="view-menu-btn">عرض
+                                القائمة</button>
+                        </div>
+                    </article>
+
+                    <!-- 4. Libyan -->
+                    <article class="restaurant-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=600&q=80"
+                                alt="صورة المطعم">
+                            <span class="rating-badge">★ 4.7</span>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="restaurant-name">المذاق الليبي</h3>
+                            <div class="restaurant-meta">
+                                <span>تقليدي</span> <span class="review-summary">(95 تقييم)</span>
+                            </div>
+                            <button onclick="showRestaurant('restaurant-4')" class="view-menu-btn">عرض
+                                القائمة</button>
+                        </div>
+                    </article>
+
+                    <!-- 5. Sweets -->
+                    <article class="restaurant-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=600&q=80"
+                                alt="صورة المطعم">
+                            <span class="rating-badge">★ 4.6</span>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="restaurant-name">حلويات الشرق</h3>
+                            <div class="restaurant-meta">
+                                <span>حلويات</span> <span class="review-summary">(150 تقييم)</span>
+                            </div>
+                            <button onclick="showRestaurant('restaurant-5')" class="view-menu-btn">عرض
+                                القائمة</button>
+                        </div>
+                    </article>
+
+                    <!-- 6. Shawarma (NEW) -->
+                    <article class="restaurant-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1529042410759-befb1204b468?auto=format&fit=crop&w=600&q=80"
+                                alt="صورة المطعم">
+                            <span class="rating-badge">★ 4.8</span>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="restaurant-name">الشاورما الدمشقية</h3>
+                            <div class="restaurant-meta">
+                                <span>شامي</span> <span class="review-summary">(310 تقييم)</span>
+                            </div>
+                            <button onclick="showRestaurant('restaurant-6')" class="view-menu-btn">عرض
+                                القائمة</button>
+                        </div>
+                    </article>
+
+                    <!-- 7. Indian (NEW) -->
+                    <article class="restaurant-card">
+                        <div class="card-image">
+                            <img src="https://www.shutterstock.com/shutterstock/photos/796385446/display_1500/stock-photo-assorted-indian-food-set-on-wooden-background-dishes-and-appetisers-of-indeed-cuisine-rice-796385446.jpg?auto=format&fit=crop&w=600&q=80"
+                                alt="صورة المطعم">
+                            <span class="rating-badge">★ 4.4</span>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="restaurant-name">بهارات الهند</h3>
+                            <div class="restaurant-meta">
+                                <span>هندي</span> <span class="review-summary">(75 تقييم)</span>
+                            </div>
+                            <button onclick="showRestaurant('restaurant-7')" class="view-menu-btn">عرض
+                                القائمة</button>
+                        </div>
+                    </article>
+
+                    <!-- 8. Healthy (NEW) -->
+                    <article class="restaurant-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=600&q=80"
+                                alt="صورة المطعم">
+                            <span class="rating-badge">★ 4.9</span>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="restaurant-name">السلطة الخضراء</h3>
+                            <div class="restaurant-meta">
+                                <span>صحي</span> <span class="review-summary">(45 تقييم)</span>
+                            </div>
+                            <button onclick="showRestaurant('restaurant-8')" class="view-menu-btn">عرض
+                                القائمة</button>
+                        </div>
+                    </article>
+
+                    <!-- 9. Seafood (NEW) -->
+                    <article class="restaurant-card">
+                        <div class="card-image">
+                            <img src="https://st5.depositphotos.com/1001069/66462/i/450/depositphotos_664621234-stock-photo-fresh-seafood-shrimp-langoustines-trout.jpg?auto=format&fit=crop&w=600&q=80"
+                                alt="صورة المطعم">
+                            <span class="rating-badge">★ 4.7</span>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="restaurant-name">عالم البحار</h3>
+                            <div class="restaurant-meta">
+                                <span>مأكولات بحرية</span> <span class="review-summary">(90 تقييم)</span>
+                            </div>
+                            <button onclick="showRestaurant('restaurant-9')" class="view-menu-btn">عرض
+                                القائمة</button>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+        </div>
+
+        <!-- =========================================
+         RESTAURANT 1: Burger Joint
+         ========================================= -->
+        <section id="restaurant-1" class="restaurant-detail hidden">
+            <div class="container">
+                <button onclick="showHome()" class="back-btn">← العودة للمطاعم</button>
+                <header class="menu-header">
+                    <div class="menu-restaurant-info">
+                        <h2>قائمة برجر جوينت</h2>
+                        <p class="restaurant-meta">وجبات سريعة • برجر، بطاطس، مشروبات</p>
+                    </div>
+                </header>
+
+                <h3 class="menu-category-title">البرجر المميز</h3>
+                <div class="menu-items-grid">
+                    <article class="menu-item">
+                        <div class="item-details">
+                            <h4>تشيز برجر كلاسيك</h4>
+                            <p class="item-desc">شريحة لحم بقري، جبنة شيدر، خس، طماطم، صوص خاص.</p>
+                        </div>
+                        <div class="item-price-action">
+                            <span class="price">12.500 د.ل</span>
+                            <div class="btn-add">+</div>
+                        </div>
+                    </article>
+                    <article class="menu-item">
+                        <div class="item-details">
+                            <h4>برجر باربيكيو بيكون</h4>
+                            <p class="item-desc">لحم بقري، بيكون مقرمش، حلقات بصل، صوص باربيكيو.</p>
+                        </div>
+                        <div class="item-price-action">
+                            <span class="price">14.500 د.ل</span>
+                            <div class="btn-add">+</div>
+                        </div>
+                    </article>
+                </div>
+
+                <h3 class="menu-category-title">الأطباق الجانبية</h3>
+                <div class="menu-items-grid">
+                    <article class="menu-item">
+                        <div class="item-details">
+                            <h4>بطاطس مقلية</h4>
+                            <p class="item-desc">بطاطس مقرمشة مع خلطة التوابل السرية.</p>
+                        </div>
+                        <div class="item-price-action">
+                            <span class="price">5.000 د.ل</span>
+                            <div class="btn-add">+</div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Reviews Section -->
+                <div class="reviews-section">
+                    <button class="toggle-reviews-btn" onclick="toggleReviews('reviews-1')">عرض التقييمات</button>
+                    <div id="reviews-1" class="reviews-container hidden">
+                        <h3>تقييمات الزبائن</h3>
+                        <div class="review-card">
+                            <div class="reviewer-name">أحمد محمد</div>
+                            <div class="review-stars">★★★★★</div>
+                            <p class="review-text">أفضل برجر في المدينة! التوصيل كان سريعاً جداً.</p>
+                        </div>
+                        <div class="review-card">
+                            <div class="reviewer-name">سارة علي</div>
+                            <div class="review-stars">★★★★☆</div>
+                            <p class="review-text">الطعام لذيذ لكن البطاطس كانت باردة قليلاً.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================
+         RESTAURANT 2: Sushi Palace
+         ========================================= -->
+        <section id="restaurant-2" class="restaurant-detail hidden">
+            <div class="container">
+                <button onclick="showHome()" class="back-btn">← العودة للمطاعم</button>
+                <header class="menu-header">
+                    <div class="menu-restaurant-info">
+                        <h2>قائمة قصر السوشي</h2>
+                        <p class="restaurant-meta">ياباني • سوشي، ساشيمي، رامن</p>
+                    </div>
+                </header>
+
+                <h3 class="menu-category-title">سوشي رولز</h3>
+                <div class="menu-items-grid">
+                    <article class="menu-item">
+                        <div class="item-details">
+                            <h4>كاليفورنيا رول</h4>
+                            <p class="item-desc">سلطعون، أفوكادو، خيار، سمسم.</p>
+                        </div>
+                        <div class="item-price-action">
+                            <span class="price">18.000 د.ل</span>
+                            <div class="btn-add">+</div>
+                        </div>
+                    </article>
+                    <article class="menu-item">
+                        <div class="item-details">
+                            <h4>سبايسي تونا</h4>
+                            <p class="item-desc">تونا، صوص حار، بصل أخضر.</p>
+                        </div>
+                        <div class="item-price-action">
+                            <span class="price">20.000 د.ل</span>
+                            <div class="btn-add">+</div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="reviews-section">
+                    <button class="toggle-reviews-btn" onclick="toggleReviews('reviews-2')">عرض التقييمات</button>
+                    <div id="reviews-2" class="reviews-container hidden">
+                        <h3>تقييمات الزبائن</h3>
+                        <div class="review-card">
+                            <div class="reviewer-name">خالد عمر</div>
+                            <div class="review-stars">★★★★★</div>
+                            <p class="review-text">طعم أصيل ومميز.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================
+         RESTAURANT 3: Bella Italia
+         ========================================= -->
+        <section id="restaurant-3" class="restaurant-detail hidden">
+            <div class="container">
+                <button onclick="showHome()" class="back-btn">← العودة للمطاعم</button>
+                <header class="menu-header">
+                    <div class="menu-restaurant-info">
+                        <h2>قائمة بيلا إيطاليا</h2>
+                        <p class="restaurant-meta">إيطالي • بيتزا، باستا</p>
+                    </div>
+                </header>
+
+                <h3 class="menu-category-title">البيتزا</h3>
+                <div class="menu-items-grid">
+                    <article class="menu-item">
+                        <div class="item-details">
+                            <h4>مارجريتا</h4>
+                            <p class="item-desc">صلصة طماطم، موزاريلا، ريحان طازج.</p>
+                        </div>
+                        <div class="item-price-action">
+                            <span class="price">15.000 د.ل</span>
+                            <div class="btn-add">+</div>
+                        </div>
+                    </article>
+                    <article class="menu-item">
+                        <div class="item-details">
+                            <h4>بيبروني</h4>
+                            <p class="item-desc">صلصة طماطم، موزاريلا، شرائح بيبروني.</p>
+                        </div>
+                        <div class="item-price-action">
+                            <span class="price">17.500 د.ل</span>
+                            <div class="btn-add">+</div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="reviews-section">
+                    <button class="toggle-reviews-btn" onclick="toggleReviews('reviews-3')">عرض التقييمات</button>
+                    <div id="reviews-3" class="reviews-container hidden">
+                        <h3>تقييمات الزبائن</h3>
+                        <div class="review-card">
+                            <div class="reviewer-name">منى يوسف</div>
+                            <div class="review-stars">★★★★☆</div>
+                            <p class="review-text">البيتزا رائعة ولكن الخدمة بطيئة قليلاً.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================
+         RESTAURANT 4: Libyan Taste
+         ========================================= -->
+        <section id="restaurant-4" class="restaurant-detail hidden">
+            <div class="container">
+                <button onclick="showHome()" class="back-btn">← العودة للمطاعم</button>
+                <header class="menu-header">
+                    <div class="menu-restaurant-info">
+                        <h2>قائمة المذاق الليبي</h2>
+                        <p class="restaurant-meta">تقليدي • كسكسي، بازين، مبكبكة</p>
+                    </div>
+                </header>
+
+                <h3 class="menu-category-title">الأطباق الرئيسية</h3>
+                <div class="menu-items-grid">
+                    <article class="menu-item">
+                        <div class="item-details">
+                            <h4>كسكسي باللحم</h4>
+                            <p class="item-desc">كسكسي ليبي تقليدي مع لحم الضأن والخضروات.</p>
+                        </div>
+                        <div class="item-price-action">
+                            <span class="price">25.000 د.ل</span>
+                            <div class="btn-add">+</div>
+                        </div>
+                    </article>
+                    <article class="menu-item">
+                        <div class="item-details">
+                            <h4>أرز بلاو</h4>
+                            <p class="item-desc">أرز بالخلطة والمكسرات والكبدة.</p>
+                        </div>
+                        <div class="item-price-action">
+                            <span class="price">22.000 د.ل</span>
+                            <div class="btn-add">+</div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="reviews-section">
+                    <button class="toggle-reviews-btn" onclick="toggleReviews('reviews-4')">عرض التقييمات</button>
+                    <div id="reviews-4" class="reviews-container hidden">
+                        <h3>تقييمات الزبائن</h3>
+                        <div class="review-card">
+                            <div class="reviewer-name">علي سالم</div>
+                            <div class="review-stars">★★★★★</div>
+                            <p class="review-text">الأكل كأنك في الحوش، تبارك الله.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================
+         RESTAURANT 5: Oriental Sweets
+         ========================================= -->
+        <section id="restaurant-5" class="restaurant-detail hidden">
+            <div class="container">
+                <button onclick="showHome()" class="back-btn">← العودة للمطاعم</button>
+                <header class="menu-header">
+                    <div class="menu-restaurant-info">
+                        <h2>قائمة حلويات الشرق</h2>
+                        <p class="restaurant-meta">حلويات • بقلاوة، كنافة</p>
+                    </div>
+                </header>
+
+                <h3 class="menu-category-title">الحلويات</h3>
+                <div class="menu-items-grid">
+                    <article class="menu-item">
+                        <div class="item-details">
+                            <h4>بقلاوة بالفستق</h4>
+                            <p class="item-desc">بقلاوة طازجة محشوة بالفستق الحلبي الفاخر.</p>
+                        </div>
+                        <div class="item-price-action">
+                            <span class="price">45.000 د.ل</span>
+                            <div class="btn-add">+</div>
+                        </div>
+                    </article>
+                    <article class="menu-item">
+                        <div class="item-details">
+                            <h4>كنافة بالجبن</h4>
+                            <p class="item-desc">كنافة ساخنة بالجبنة النابلسية.</p>
+                        </div>
+                        <div class="item-price-action">
+                            <span class="price">15.000 د.ل</span>
+                            <div class="btn-add">+</div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="reviews-section">
+                    <button class="toggle-reviews-btn" onclick="toggleReviews('reviews-5')">عرض التقييمات</button>
+                    <div id="reviews-5" class="reviews-container hidden">
+                        <h3>تقييمات الزبائن</h3>
+                        <div class="review-card">
+                            <div class="reviewer-name">نادية حسن</div>
+                            <div class="review-stars">★★★★★</div>
+                            <p class="review-text">الكنافة طعمها لا يقاوم!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- =========================================
+         RESTAURANT 6: Damascus Shawarma (NEW)
+         ========================================= -->
+    <section id="restaurant-6" class="restaurant-detail hidden">
+        <div class="container">
+            <button onclick="showAllRestaurants()" class="back-btn">← العودة للقائمة</button>
+            <header class="menu-header">
+                <div class="menu-restaurant-info">
+                    <h2>قائمة الشاورما الدمشقية</h2>
+                    <p class="restaurant-meta">شامي • شاورما، فلافل، مشاوي</p>
+                </div>
+            </header>
+
+            <h3 class="menu-category-title">الساندويشات</h3>
+            <div class="menu-items-grid">
+                <article class="menu-item">
+                    <div class="item-details">
+                        <h4>شاورما دجاج</h4>
+                        <p class="item-desc">خبز صاج، ثومية، مخلل، شاورما دجاج.</p>
+                    </div>
+                    <div class="item-price-action">
+                        <span class="price">10.000 د.ل</span>
+                        <div class="btn-add">+</div>
+                    </div>
+                </article>
+                <article class="menu-item">
+                    <div class="item-details">
+                        <h4>شاورما لحم</h4>
+                        <p class="item-desc">خبز صاج، طحينة، بصل وبقدونس، شاورما لحم.</p>
+                    </div>
+                    <div class="item-price-action">
+                        <span class="price">12.000 د.ل</span>
+                        <div class="btn-add">+</div>
+                    </div>
+                </article>
+                <article class="menu-item">
+                    <div class="item-details">
+                        <h4>فلافل</h4>
+                        <p class="item-desc">فلافل ساخنة، حمص، سلطة، طحينة.</p>
+                    </div>
+                    <div class="item-price-action">
+                        <span class="price">6.000 د.ل</span>
+                        <div class="btn-add">+</div>
+                    </div>
+                </article>
+            </div>
+
+            <h3 class="menu-category-title">الواجبات</h3>
+            <div class="menu-items-grid">
+                <article class="menu-item">
+                    <div class="item-details">
+                        <h4>وجبة شاورما دجاج</h4>
+                        <p class="item-desc">شاورما عربي مقطع، بطاطس، ثومية، مخلل.</p>
+                    </div>
+                    <div class="item-price-action">
+                        <span class="price">18.000 د.ل</span>
+                        <div class="btn-add">+</div>
+                    </div>
+                </article>
+                <article class="menu-item">
+                    <div class="item-details">
+                        <h4>وجبة شاورما لحم</h4>
+                        <p class="item-desc">شاورما لحم عربي، بطاطس، طحينة.</p>
+                    </div>
+                    <div class="item-price-action">
+                        <span class="price">20.000 د.ل</span>
+                        <div class="btn-add">+</div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="reviews-section">
+                <button class="toggle-reviews-btn" onclick="toggleReviews('reviews-6')">عرض التقييمات</button>
+                <div id="reviews-6" class="reviews-container hidden">
+                    <h3>تقييمات الزبائن</h3>
+                    <div class="review-card">
+                        <div class="reviewer-name">سامي علي</div>
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">أطيب شاورما ذقتها من فترة طويلة.</p>
+                    </div>
+                    <div class="review-card">
+                        <div class="reviewer-name">رامي كمال</div>
+                        <div class="review-stars">★★★★☆</div>
+                        <p class="review-text">ممتازة بس كثروا الثومية شوية.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+         RESTAURANT 7: Indian Spices (NEW)
+         ========================================= -->
+    <section id="restaurant-7" class="restaurant-detail hidden">
+        <div class="container">
+            <button onclick="showAllRestaurants()" class="back-btn">← العودة للقائمة</button>
+            <header class="menu-header">
+                <div class="menu-restaurant-info">
+                    <h2>قائمة بهارات الهند</h2>
+                    <p class="restaurant-meta">هندي • برياني، كاري، نان</p>
+                </div>
+            </header>
+
+            <h3 class="menu-category-title">الأطباق الرئيسية</h3>
+            <div class="menu-items-grid">
+                <article class="menu-item">
+                    <div class="item-details">
+                        <h4>برياني دجاج</h4>
+                        <p class="item-desc">أرز بسمتي مع دجاج وتوابل هندية أصلية.</p>
+                    </div>
+                    <div class="item-price-action">
+                        <span class="price">25.000 د.ل</span>
+                        <div class="btn-add">+</div>
+                    </div>
+                </article>
+                <article class="menu-item">
+                    <div class="item-details">
+                        <h4>دجاج بالزبدة</h4>
+                        <p class="item-desc">قطع دجاج في صلصة طماطم كريمية غنية.</p>
+                    </div>
+                    <div class="item-price-action">
+                        <span class="price">28.000 د.ل</span>
+                        <div class="btn-add">+</div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="reviews-section">
+                <button class="toggle-reviews-btn" onclick="toggleReviews('reviews-7')">عرض التقييمات</button>
+                <div id="reviews-7" class="reviews-container hidden">
+                    <h3>تقييمات الزبائن</h3>
+                    <div class="review-card">
+                        <div class="reviewer-name">هند احمد</div>
+                        <div class="review-stars">★★★★☆</div>
+                        <p class="review-text">أكل حار ولذيذ جداً.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+         RESTAURANT 8: Green Salad (NEW)
+         ========================================= -->
+    <section id="restaurant-8" class="restaurant-detail hidden">
+        <div class="container">
+            <button onclick="showAllRestaurants()" class="back-btn">← العودة للقائمة</button>
+            <header class="menu-header">
+                <div class="menu-restaurant-info">
+                    <h2>قائمة السلطة الخضراء</h2>
+                    <p class="restaurant-meta">صحي • سلطات، عصائر، ساندويش</p>
+                </div>
+            </header>
+
+            <h3 class="menu-category-title">السلطات</h3>
+            <div class="menu-items-grid">
+                <article class="menu-item">
+                    <div class="item-details">
+                        <h4>سلطة سيزر</h4>
+                        <p class="item-desc">خس، دجاج مشوي، جبنة بارميزان، صوص سيزر.</p>
+                    </div>
+                    <div class="item-price-action">
+                        <span class="price">15.000 د.ل</span>
+                        <div class="btn-add">+</div>
+                    </div>
+                </article>
+                <article class="menu-item">
+                    <div class="item-details">
+                        <h4>سلطة يونانية</h4>
+                        <p class="item-desc">خيار، طماطم، زيتون، جبنة فيتا، زيت زيتون.</p>
+                    </div>
+                    <div class="item-price-action">
+                        <span class="price">14.000 د.ل</span>
+                        <div class="btn-add">+</div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="reviews-section">
+                <button class="toggle-reviews-btn" onclick="toggleReviews('reviews-8')">عرض التقييمات</button>
+                <div id="reviews-8" class="reviews-container hidden">
+                    <h3>تقييمات الزبائن</h3>
+                    <div class="review-card">
+                        <div class="reviewer-name">ليلى محمود</div>
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">خضروات طازجة ومقرمشة، صحي جداً.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+         RESTAURANT 9: Sea World (NEW)
+         ========================================= -->
+    <section id="restaurant-9" class="restaurant-detail hidden">
+        <div class="container">
+            <button onclick="showAllRestaurants()" class="back-btn">← العودة للقائمة</button>
+            <header class="menu-header">
+                <div class="menu-restaurant-info">
+                    <h2>قائمة عالم البحار</h2>
+                    <p class="restaurant-meta">مأكولات بحرية • سمك، جمبري، كلاماري</p>
+                </div>
+            </header>
+
+            <h3 class="menu-category-title">الأسماك</h3>
+            <div class="menu-items-grid">
+                <article class="menu-item">
+                    <div class="item-details">
+                        <h4>سمك مشوي</h4>
+                        <p class="item-desc">سمك دنيس مشوي على الفحم مع الليمون.</p>
+                    </div>
+                    <div class="item-price-action">
+                        <span class="price">35.000 د.ل</span>
+                        <div class="btn-add">+</div>
+                    </div>
+                </article>
+                <article class="menu-item">
+                    <div class="item-details">
+                        <h4>جمبري مقلي</h4>
+                        <p class="item-desc">جمبري جامبو مقلي مع صوص التارتار.</p>
+                    </div>
+                    <div class="item-price-action">
+                        <span class="price">40.000 د.ل</span>
+                        <div class="btn-add">+</div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="reviews-section">
+                <button class="toggle-reviews-btn" onclick="toggleReviews('reviews-9')">عرض التقييمات</button>
+                <div id="reviews-9" class="reviews-container hidden">
+                    <h3>تقييمات الزبائن</h3>
+                    <div class="review-card">
+                        <div class="reviewer-name">جمال عبد الله</div>
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">السمك طازج كأنه من البحر للصحن.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+         STATIC PAGES
+         ========================================= -->
+
+    <!-- About Us -->
+    <section id="about-us" class="restaurant-detail hidden">
+        <div class="container">
+            <button onclick="showHome()" class="back-btn">← العودة للرئيسية</button>
+            <h2 class="section-title">من نحن</h2>
+            <div style="background: white; padding: 40px; border-radius: 8px;">
+                <p>نحن منصة رائدة لتوصيل الطعام، نجمع لك أفضل المطاعم المحلية في مكان واحد.</p>
+                <p>تأسسنا عام 2025 بهدف تسهيل عملية طلب الطعام وتوفير تجربة مستخدم مميزة.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Help Center -->
+    <section id="help" class="restaurant-detail hidden">
+        <div class="container">
+            <button onclick="showHome()" class="back-btn">← العودة للرئيسية</button>
+            <h2 class="section-title">مركز المساعدة</h2>
+            <div style="background: white; padding: 40px; border-radius: 8px;">
+                <h3>كيف أطلب طعام؟</h3>
+                <p>اختر المطعم، أضف الوجبات للسلة، وأكمل الطلب.</p>
+                <h3>هل تتوفر خدمة الدفع عند الاستلام؟</h3>
+                <p>نعم، جميع الطلبات تدفع عند الاستلام حالياً.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Terms -->
+    <section id="terms" class="restaurant-detail hidden">
+        <div class="container">
+            <button onclick="showHome()" class="back-btn">← العودة للرئيسية</button>
+            <h2 class="section-title">شروط الخدمة</h2>
+            <div style="background: white; padding: 40px; border-radius: 8px;">
+                <p>استخدامك للموقع يعني موافقتك على الشروط التالية...</p>
+                <p>1. يجب أن تكون المعلومات المقدمة صحيحة.</p>
+                <p>2. يحق للمطعم إلغاء الطلب في حال عدم توفر المواد.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Privacy -->
+    <section id="privacy" class="restaurant-detail hidden">
+        <div class="container">
+            <button onclick="showHome()" class="back-btn">← العودة للرئيسية</button>
+            <h2 class="section-title">سياسة الخصوصية</h2>
+            <div style="background: white; padding: 40px; border-radius: 8px;">
+                <p>نحن نحترم خصوصيتك ونحافظ على سرية بياناتك.</p>
+                <p>لا يتم مشاركة معلوماتك مع أي طرف ثالث غير المطعم والسائق.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =========================================
+         Footer
+         ========================================= -->
+    <footer id="main-footer">
+        <div class="container footer-content">
+            <div class="footer-col">
+                <h3>توصيل طعام</h3>
+                <ul>
+                    <li><a href="#" onclick="showStaticPage('about-us')">من نحن</a></li>
+                    <li><a href="#" onclick="showStaticPage('help')">وظائف</a></li>
+                    <!-- Using Help/Jobs same logic for demo -->
+                    <li><a href="#" onclick="showStaticPage('about-us')">المدونة</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>شارك معنا</h3>
+                <ul>
+                    <li><a href="#" onclick="showStaticPage('help')">أضف مطعمك</a></li>
+                    <li><a href="#" onclick="showStaticPage('help')">كن سائقاً</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>الدعم والمساعدة</h3>
+                <ul>
+                    <li><a href="#" onclick="showStaticPage('help')">مركز المساعدة</a></li>
+                    <li><a href="#" onclick="showStaticPage('terms')">شروط الخدمة</a></li>
+                    <li><a href="#" onclick="showStaticPage('privacy')">سياسة الخصوصية</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 منصة توصيل الطعام. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <!-- Minimal Scripts for Interactivity -->
+    <script src="script.js"></script>
+    </div>
+
+</body>
+
+</html>

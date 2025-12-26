@@ -1,0 +1,469 @@
+/* 
+  Multi-Restaurant Platform Stylesheet
+  Constraints: No CSS Variables, No Inline Styles, Class/ID only
+*/
+
+/* =========================================
+   1. Reset & Global Styles
+   ========================================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* =========================================
+   2. Layout Utilities
+   ========================================= */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #2c3e50;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* =========================================
+   3. Header & Navigation
+   ========================================= */
+#main-header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 15px 0;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #e67e22;
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 20px;
+}
+
+.main-nav a {
+    font-weight: 500;
+    color: #555;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: #e67e22;
+}
+
+/* =========================================
+   4. Hero Section
+   ========================================= */
+#hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.btn-primary {
+    padding: 12px 25px;
+    background-color: #e67e22;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #d35400;
+}
+
+/* =========================================
+   5. Restaurant Listings (Grid)
+   ========================================= */
+#restaurants {
+    padding: 60px 0;
+}
+
+.restaurant-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.restaurant-card {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.restaurant-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-image {
+    height: 200px;
+    background-color: #ddd;
+    position: relative;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.rating-badge {
+    position: absolute;
+    top: 15px;
+    right: auto;
+    left: 15px;
+    /* RTL Flip */
+    background-color: #fff;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-weight: 700;
+    color: #fead0d;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-info {
+    padding: 20px;
+}
+
+.restaurant-name {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.restaurant-meta {
+    color: #777;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.view-menu-btn {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    background-color: #f8f9fa;
+    color: #e67e22;
+    border: 1px solid #e67e22;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.view-menu-btn:hover {
+    background-color: #e67e22;
+    color: #fff;
+}
+
+/* =========================================
+   6. Menu Section (Detail View Mockup)
+   ========================================= */
+#menu-preview {
+    padding: 60px 0;
+    background-color: #fff;
+    border-top: 1px solid #eee;
+}
+
+.menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.menu-restaurant-info h2 {
+    font-size: 2.2rem;
+    margin-bottom: 5px;
+}
+
+.menu-categories {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.category-pill {
+    padding: 8px 20px;
+    background-color: #f1f2f6;
+    border-radius: 25px;
+    color: #555;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.category-pill:hover,
+.category-pill.active {
+    background-color: #2c3e50;
+    color: #fff;
+}
+
+.menu-category-title {
+    font-size: 1.5rem;
+    margin: 30px 0 20px;
+    color: #e67e22;
+    border-left: none;
+    border-right: 4px solid #e67e22;
+    /* RTL Flip */
+    padding-left: 0;
+    padding-right: 15px;
+    /* RTL Flip */
+}
+
+.menu-items-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 25px;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #eee;
+    padding: 20px;
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
+}
+
+.menu-item:hover {
+    border-color: #e67e22;
+}
+
+.item-details h4 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.item-desc {
+    color: #777;
+    font-size: 0.9rem;
+    max-width: 300px;
+}
+
+.item-price-action {
+    text-align: left;
+    /* RTL Flip */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.price {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #333;
+}
+
+.btn-add {
+    width: 30px;
+    height: 30px;
+    background-color: #e67e22;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.back-btn {
+    margin: 20px 0;
+    padding: 8px 15px;
+    border: 1px solid #ddd;
+    background: white;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.back-btn:hover {
+    background: #f1f1f1;
+}
+
+.reviews-section {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.toggle-reviews-btn {
+    background: none;
+    border: none;
+    color: #3498db;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.review-card {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #eee;
+}
+
+.reviewer-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.review-stars {
+    color: #f1c40f;
+    margin-bottom: 5px;
+}
+
+.review-text {
+    color: #555;
+    font-size: 0.95rem;
+}
+
+/* =========================================
+   7. Footer
+   ========================================= */
+#main-footer {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 60px 0 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-col h3 {
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col a {
+    color: #bdc3c7;
+}
+
+.footer-col a:hover {
+    color: #fff;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #34495e;
+    font-size: 0.9rem;
+    color: #95a5a6;
+}
+
+/* =========================================
+   8. Responsive Adjustments
+   ========================================= */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .search-bar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .search-input {
+        width: 100%;
+    }
+
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .menu-items-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .menu-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+}
